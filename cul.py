@@ -20,21 +20,3 @@ def x():
         print(" ".join(arg.lower() for arg in args))
     else:
         raise SystemExit(f"Usage: {sys.argv[0]} (-c | -u | -l) <arguments>...")
-
-# example
-import json
-
-y = {
-  "name": "John",
-  "age": 30,
-  "married": True,
-  "divorced": False,
-  "children": ("Ann","Billy"),
-  "pets": None,
-  "cars": [
-    {"model": "BMW 230", "mpg": 27.5},
-    {"model": "Ford Edge", "mpg": 24.1}
-  ]
-}
-
-print(json.dumps(y))
