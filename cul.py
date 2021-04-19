@@ -1,6 +1,13 @@
-# cul.py
+# cul.my 
 
 import sys
+
+# Usage
+# -c to capitalize the arguments
+# -u to convert the arguments to uppercase
+# -l to convert the argument to lowercase
+
+
 
 opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
 args = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
