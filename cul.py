@@ -1,4 +1,4 @@
-# cul.my 
+# cul.py 
 
 import sys
 
