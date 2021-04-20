@@ -2,8 +2,6 @@
 
 import sys, json, jsonhandling, os
 
-# making sure you are in the right directory
-os.system("cd ~/FreikartenManager")
 
 # conditions for adding other rewards for certain values of folge
 def checkConditionsAndManipulate_Anna():
@@ -102,6 +100,7 @@ def checkConditionsAndManipulate_James():
 
 
 ######### ACTUAL START OF CODE #########
+
 
 # getting all users specifications
 opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
