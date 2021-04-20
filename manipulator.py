@@ -1,6 +1,9 @@
 # file for manipulating/editing data_james and data_anna
 
-import sys, json, jsonhandling
+import sys, json, jsonhandling, os
+
+# making sure you are in the right directory
+os.system("cd ~/FreikartenManager")
 
 # conditions for adding other rewards for certain values of folge
 def checkConditionsAndManipulate_Anna():
@@ -15,10 +18,10 @@ def checkConditionsAndManipulate_Anna():
         print('Die Folge beträgt 2! Du erhältst eine Freikarte')
         data_anna['freikarten'] += 1
     elif data_anna['folge'] == 3:
-        print('Es sind nun ganze drei Schnapszahlen hintereinander. Du kriegst einen YouTube-Gutschein!')
+        print('Es sind nun ganze drei Schnapszahlen hintereinander. \nDu kriegst einen YouTube-Gutschein!')
         data_anna['youtube'] += 1
     elif data_anna['folge'] == 4:
-        print('Langsam langsam... Du hast eine Viererfolge! Du kriegst den Einmal-Aufstehen-Gutschein.')
+        print('Langsam langsam... Du hast eine Viererfolge! \nDu kriegst den Einmal-Aufstehen-Gutschein.')
         data_anna['einmal_aufstehen'] += 1
     elif data_anna['folge'] == 5:
         print('Das gibt eine wohlverdiente Massage. Du hast eine Fünferfolge erreicht!')
@@ -30,8 +33,9 @@ def checkConditionsAndManipulate_Anna():
         print('Du hast scheinbar eine Siebenerfolge. Aber ich glaube du schummelst... \nDu kriegst einen Striptease, uh lala ;)')
         data_anna['striptease'] += 1
     elif data_anna['folge'] == 8:
-        print('Wow! Scheinbar hast du die Folge einmal erfüllt. Eigentlich dachte ich nicht, dass es so weit kommen würde. \nHerzlichen Glückwunsch. \nDeine Folge wird jetzt allerdings auf 0 zurückgesetzt. Auf ein Neues! \nDu kriegst den ultimativen Preis: Du darfst meine Hasssache machen!')
-        data_anna['hasssache'] = 0
+        print('Wow! Scheinbar hast du die Folge einmal erfüllt. \nEigentlich dachte ich nicht, dass es so weit kommen würde. \nHerzlichen Glückwunsch. \nDeine Folge wird jetzt allerdings auf 0 zurückgesetzt. Auf ein Neues! \nDu kriegst den ultimativen Preis: Du darfst meine Hasssache machen!')
+        data_anna['hasssache'] += 1
+        data_anna['folge'] = 0
     else:
         print('Ein Fehler ist wohl unterlaufen. Konsultiere James um ihn zu beheben. \nAchtung merke dir, was passiert ist.')
         # data_anna['folge'] = 0
@@ -59,10 +63,10 @@ def checkConditionsAndManipulate_James():
         print('Die Folge beträgt 2! Du erhältst eine Freikarte')
         data_james['freikarten'] += 1
     elif data_james['folge'] == 3:
-        print('Es sind nun ganze drei Schnapszahlen hintereinander. Du kriegst einen YouTube-Gutschein!')
+        print('Es sind nun ganze drei Schnapszahlen hintereinander. \nDu kriegst einen YouTube-Gutschein!')
         data_james['youtube'] += 1
     elif data_james['folge'] == 4:
-        print('Langsam langsam... Du hast eine Viererfolge! Du kriegst den Einmal-Aufstehen-Gutschein.')
+        print('Langsam langsam... Du hast eine Viererfolge! \nDu kriegst den Einmal-Aufstehen-Gutschein.')
         data_james['einmal_aufstehen'] += 1
     elif data_james['folge'] == 5:
         print('Das gibt eine wohlverdiente Massage. Du hast eine Fünferfolge erreicht!')
@@ -74,8 +78,9 @@ def checkConditionsAndManipulate_James():
         print('Du hast scheinbar eine Siebenerfolge. Aber ich glaube du schummelst... \nDu kriegst einen Striptease, uh lala ;)')
         data_james['striptease'] += 1
     elif data_james['folge'] == 8:
-        print('Wow! Scheinbar hast du die Folge einmal erfüllt. Eigentlich dachte ich nicht, dass es so weit kommen würde. \nHerzlichen Glückwunsch. \nDeine Folge wird jetzt allerdings auf 0 zurückgesetzt. Auf ein Neues! \nDu kriegst den ultimativen Preis: Du darfst meine Hasssache machen!')
-        data_james['hasssache'] = 0
+        print('Wow! Scheinbar hast du die Folge einmal erfüllt. \nEigentlich dachte ich nicht, dass es so weit kommen würde. \nHerzlichen Glückwunsch. \nDeine Folge wird jetzt allerdings auf 0 zurückgesetzt. Auf ein Neues! \nDu kriegst den ultimativen Preis: Du darfst meine Hasssache machen!')
+        data_james['hasssache'] += 0
+        data_james['folge'] = 0
     else:
         print('Ein Fehler ist wohl unterlaufen. Konsultiere James um ihn zu beheben. \nAchtung merke dir, was passiert ist.')
         # data_james['folge'] = 0
@@ -130,4 +135,5 @@ elif "-a" in opts:
     checkConditionsAndManipulate_James()
     
 
-
+# adding changed to github
+os.system('git add * && git commit -m "S.o got a Schnapszahl." && git push')
