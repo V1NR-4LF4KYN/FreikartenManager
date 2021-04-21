@@ -135,4 +135,4 @@ elif "-a" in opts:
     
 
 # adding changed to github
-# os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
+os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
