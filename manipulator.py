@@ -118,9 +118,11 @@ with open("data_james.json", "r") as f_j: # open  james json file
 
 # checking for user command specification
 if "-r" in opts: # resetting all data
+    print('resetting all the data')
     jsonhandling.reset()
     
 elif "-j" in opts: # adding one schnapszahl to james
+    print('adding one to streak of james')
     data_james['folge'] += 1
     data_anna['folge'] = 0
     checkConditionsAndManipulate_James()
@@ -128,20 +130,24 @@ elif "-j" in opts: # adding one schnapszahl to james
     
 
 elif "-a" in opts: # adding one schnapszahl to anna
+    print('adding one to streak of anna')
     data_anna['folge'] += 1
     data_james['folge'] = 0
     checkConditionsAndManipulate_Anna()
     checkConditionsAndManipulate_James()
 
 elif "-az" in opts: # setting annas folge to zero
+    print('setting annas folge to zero')
     data_anna['folge'] = 0
     checkConditionsAndManipulate_Anna()
 
 elif "-jz" in opts: # setting james folge to zero
+    print('setting james folge to zero')
     data_james['folge'] = 0
     checkConditionsAndManipulate_James()
 
 elif "-z" in opts: # setting all streaks to zero
+    print('setting all streaks to zero')
     data_anna['folge'] = 0
     data_james['folge'] = 0
     checkConditionsAndManipulate_Anna()
