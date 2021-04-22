@@ -132,7 +132,14 @@ elif "-a" in opts:
     data_james['folge'] = 0
     checkConditionsAndManipulate_Anna()
     checkConditionsAndManipulate_James()
-    
+
+''' # want to add funcs for setting folge to zero and other stuff as well
+for opt in opts:
+    if opt == "-az":
+        data_anna['folge'] = 0
+        checkConditionsAndManipulate_Anna()
+        checkConditionsAndManipulate_James()
+'''    
 
 # adding changed to github
 os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
