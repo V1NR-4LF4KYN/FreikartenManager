@@ -117,29 +117,36 @@ with open("data_james.json", "r") as f_j: # open  james json file
 
 
 # checking for user command specification
-if "-r" in opts:
+if "-r" in opts: # resetting all data
     jsonhandling.reset()
     
-elif "-j" in opts:
+elif "-j" in opts: # adding one schnapszahl to james
     data_james['folge'] += 1
     data_anna['folge'] = 0
     checkConditionsAndManipulate_James()
     checkConditionsAndManipulate_Anna()
     
 
-elif "-a" in opts:
+elif "-a" in opts: # adding one schnapszahl to anna
     data_anna['folge'] += 1
     data_james['folge'] = 0
     checkConditionsAndManipulate_Anna()
     checkConditionsAndManipulate_James()
 
-''' # want to add funcs for setting folge to zero and other stuff as well
-for opt in opts:
-    if opt == "-az":
-        data_anna['folge'] = 0
-        checkConditionsAndManipulate_Anna()
-        checkConditionsAndManipulate_James()
-'''    
+elif "-az" in opts: # setting annas folge to zero
+    data_anna['folge'] = 0
+    checkConditionsAndManipulate_Anna()
+
+elif "-jz" in opts: # setting james folge to zero
+    data_james['folge'] = 0
+    checkConditionsAndManipulate_James()
+
+elif "-z" in opts: # setting all streaks to zero
+    data_anna['folge'] = 0
+    data_james['folge'] = 0
+    checkConditionsAndManipulate_Anna()
+    checkConditionsAndManipulate_James()
+
 
 # adding changed to github
 os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
