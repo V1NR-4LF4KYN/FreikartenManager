@@ -118,9 +118,7 @@ with open("data_james.json", "r") as f_j: # open  james json file
 
 # checking for user command specification
 if "-r" in opts: # resetting all data
-    print('resetting all the data')
-    jsonhandling.reset()
-    
+   jsonhandling.reset() 
 elif "-j" in opts: # adding one schnapszahl to james
     print('adding one to streak of james')
     data_james['folge'] += 1
