@@ -125,14 +125,23 @@ elif "-j" in opts: # adding one schnapszahl to james
     data_anna['folge'] = 0
     checkConditionsAndManipulate_James()
     checkConditionsAndManipulate_Anna()
-    
+
+elif "-rj" in opts: # removing one schnapszahl from james
+    print('removing one Schnapszahl from james')
+    data_james['folge'] -= 1
+    checkConditionsAndManipulate_James()    
 
 elif "-a" in opts: # adding one schnapszahl to anna
     print('adding one to streak of anna')
     data_anna['folge'] += 1
     data_james['folge'] = 0
-    checkConditionsAndManipulate_Anna()
+    checkConditionsAndManip;ulate_Anna()
     checkConditionsAndManipulate_James()
+
+elif "-ra" in opts: # removing one schnapszahl from anna
+    print('removing one Schnapszahl from anna')
+    data_anna['folge'] -= 1
+    checkConditionsAndManipulate_Anna()
 
 elif "-az" in opts: # setting annas folge to zero
     print('setting annas folge to zero')
@@ -151,7 +160,14 @@ elif "-z" in opts: # setting all streaks to zero
     checkConditionsAndManipulate_Anna()
     checkConditionsAndManipulate_James()
 
+elif "-aj" in opts or "-ja" in opts: # adding one to streak in both data sets
+    print('adding one to streak of james and anna')
+    data_anna['folge'] += 1
+    data_james['folge'] += 1
+    checkConditionsAndManipulate_James()
+    checkConditionsAndManipulate_Anna()
+
 
 # adding changed to github
-os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
-print('Pushed succesfully :)')
+#os.system('git add * && git commit -q -m "S.o got a Schnapszahl." && git push -q')
+#print('Pushed succesfully :)')
